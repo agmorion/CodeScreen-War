@@ -4,8 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CardsTest
+namespace War
 {
+    /// <summary>
+    /// A simple set of ascii card patterns to render from
+    /// </summary>
+    /// <remarks>
+    /// The patterns listed here represent are generic.
+    /// Each occurance of an 'X' in the following patterns
+    /// is to be replaced with the suit symbol of the card
+    /// being rendered.
+    /// </remarks>
     class CardPatterns
     {
         public const int patternHeight = 11;
