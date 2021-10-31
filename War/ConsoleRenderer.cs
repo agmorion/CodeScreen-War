@@ -171,14 +171,14 @@ namespace War
         /// <param name="winner">The name of the winner</param>
         /// <param name="duration">The amount of time it took to play</param>
         /// <param name="rounds">The number of rounds it took to finish</param>
-        public override void RenderGameResult(string winner, TimeSpan duration, int rounds)
+        public override void RenderGameResult(string winner, string duration, int rounds)
         {
             ClearSurface();
-            Console.SetCursorPosition(1, 1);
+            Console.SetCursorPosition(0, 1);
             Console.WriteLine(
                 "Congratulations to both players for a hard fought game of War!\n" +
-                String.Format("But special congratultions to {0}\n", winner) +
-                String.Format("{0} won after {1} rounds in {3}", winner, rounds, duration)
+                String.Format("But special congratultions to {0}.\n\n", winner) +
+                String.Format("{0} won after {1} rounds in {2}.", winner, rounds, duration)
                 );
         }
 

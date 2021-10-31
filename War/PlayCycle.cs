@@ -62,6 +62,26 @@ namespace War
         private CardDeck playerDeck;
 
         /// <summary>
+        /// Time when the current game started
+        /// </summary>
+        private DateTime startTime;
+
+        public string TotalPlayTime
+        {
+            get
+            {
+                TimeSpan span = DateTime.Now - startTime;
+                string ret = "";
+                if ((int)(span.TotalHours) > 0) ret = String.Format("{0} hour{1}", span.TotalHours, span.Hours == 1 ? "" : "s" );
+                if ((int)(span.TotalMinutes) > 0) ret += (ret.Length > 0 ? " " : "") + String.Format("{0} minute{1}", span.Minutes, span.Minutes == 1 ? "" : "s");
+                ret += (ret.Length > 0 ? " " : "") + String.Format("{0} second{1}", span.Seconds, span.Seconds == 1 ? "" : "s");
+
+                return ret;
+            }
+
+        }
+
+        /// <summary>
         /// A method to wait for a console keystroke
         /// </summary>
         /// <param name="secondsToWait">How long to wait in seconds or -1 (forever)</param>
@@ -116,13 +136,13 @@ namespace War
             cleanDeck.SplitDeck(out computerDeck, out playerDeck);
             renderer.Pause(2000);
 
-            DateTime startTime = DateTime.Now;
+            startTime = DateTime.Now;
 
             Play();
 
             renderer.RenderGameResult(
                 computerDeck.deckSize == 0 ? playerName : "Computer",
-                DateTime.Now - startTime,
+                TotalPlayTime,
                 totalRounds
                 );
         }

@@ -108,7 +108,7 @@ namespace War
         /// <param name="winner">The name of the winner</param>
         /// <param name="duration">How long the play took</param>
         /// <param name="rounds">How many rounds the play took</param>
-        public abstract void RenderGameResult(string winner, TimeSpan duration, int rounds);
+        public abstract void RenderGameResult(string winner, string duration, int rounds);
 
         /// <summary>
         /// Render how many cards are at risk this round
