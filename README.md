@@ -2,7 +2,7 @@
 Simple Card Game 'War' for Code Screening (C#)
 
 ## This project was built with Microsoft Visual Studio 2015
-It is a simple console application for Microsoft Windows and should run on almost any .NET 2 or later system.
+It is a simple console application for Microsoft Windows and should run on almost any .NET 4.5.2 or later system.
 
 ## Program Information
 Executable name: war.exe
