@@ -1,20 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace War
 {
-    /// <summary>
-    /// Because .NET doesn't supply this directly, we 
-    /// use interop to call out to the kbhit C function
-    /// </summary>
-    public class Win32Interop {
-        [DllImport("crtdll.dll")]   public static extern int _kbhit();
-    }
-
     /// <summary>
     /// Manages the cycle of game play for an entire game session
     /// </summary>
@@ -96,7 +85,7 @@ namespace War
             {
 
                 DateTime startTime = DateTime.Now;
-                while (Win32Interop._kbhit() == 0)
+                while (Console.KeyAvailable == false )
                 {
                     // If secondsToWait is -1, wait indefinitely
                     if (-1 == secondsToWait ||
@@ -105,7 +94,7 @@ namespace War
                     else
                         break;
                 }
-                while (Win32Interop._kbhit() != 0)
+                while (Console.KeyAvailable)
                 {
                     Console.ReadKey(true);
                     ret = true;

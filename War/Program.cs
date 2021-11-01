@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace War
 {
@@ -73,6 +70,13 @@ namespace War
         private static string GetPlayerName()
         {
             string ret = "";
+
+            // This is a good place to make sure the console window is
+            // set to the same width as the console buffer and a minumum height
+            int minHeight = 23;
+            Console.WindowHeight = Math.Max(minHeight, Console.WindowHeight);
+            Console.WindowWidth = Console.BufferWidth;
+
             while (ret.Length == 0)
             {
                 Console.WriteLine("What is your name, Player 1?");
