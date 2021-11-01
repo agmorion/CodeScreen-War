@@ -11,3 +11,6 @@ Optional Arguments:
 --help - Provides a short help description about usage
 
 --runtoend - Removes waits for keystrokes so the game runs to the end automatically
+
+## Pre-built executable
+A prebuilt executable is available in the `distro` folder
